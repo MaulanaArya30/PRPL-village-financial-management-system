@@ -13,7 +13,7 @@ const BudgetFilled = ({ onEdit }) => {
   useEffect(() => {
     const fetchLatestBudget = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/budgets");
+        const res = await fetch("https://prpl-production.up.railway.app/api/budgets");
         const data = await res.json();
         const approved = data.filter((b) => b.status === "approved");
         const latest = approved[approved.length - 1];

@@ -53,7 +53,8 @@ const BudgetCreationForm = ({ onSubmit, onBack }) => {
           status: "pending",
         };
 
-        const res = await fetch("http://localhost:5000/api/budgets", {
+        // 👇 THIS IS THE ONLY LINE I CHANGED (Localhost -> Railway)
+        const res = await fetch("https://prpl-production.up.railway.app/api/budgets", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
